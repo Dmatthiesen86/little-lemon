@@ -1,6 +1,7 @@
 // Nav.js
 import React from 'react';
 import logo from './Logo.png'; 
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
     return (
@@ -8,10 +9,10 @@ const Nav = () => {
             <img src={logo} alt="Little Lemon Logo" />
             <nav>
                 <ul>
-                    <li><a href="/">Home</a></li>
+                    <li><Link to="/">Home</Link></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="/menu">Menu</a></li>
-                    <li><a href="/reservations">Reservations</a></li>
+                    <li><Link to="/reservations">Reservations</Link></li>
                     <li><a href="/order-online">Order Online</a></li>
                     <li><a href="/login">Login</a></li>
                 </ul>
