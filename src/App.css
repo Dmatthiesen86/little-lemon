@@ -1,3 +1,5 @@
+/* Existing styles... */
+
 .App {
   text-align: center;
 }
@@ -28,6 +30,128 @@
   color: #61dafb;
 }
 
+/* New styles for the layout */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.hero {
+  height: 458px;
+  width: 100%;
+  background-color: #042d23; /* Change as needed */
+}
+
+.highlights {
+  height: 706px;
+  width: 100%;
+  background-color: #d0d0d0; /* Change as needed */
+}
+
+.testimonials {
+  height: 541px;
+  width: 100%;
+  background-color: #b8b8b8; /* Change as needed */
+}
+
+.about {
+  height: 681px;
+  width: 100%;
+  background-color: #a0a0a0; /* Change as needed */
+}
+
+footer {
+  height: 349px;
+  width: 100%;
+  background-color: #888888; /* Change as needed */
+}
+
+/* New styles for horizontal navigation and footer */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 15px; /* Space between menu items */
+}
+
+nav a {
+  text-decoration: none;
+  color: #333; /* Change link color as needed */
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #f1f1f1; /* Change as needed */
+}
+
+footer div {
+  flex: 1; /* Allow equal space for each section */
+  margin: 0 10px;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin: 5px 0; /* Space between list items */
+}
+
+footer h4 {
+  margin: 10px 0; /* Space above headings */
+}
+
+@media (max-width: 768px) {
+  .hero, .highlights, .testimonials, .about, footer {
+    height: auto; /* Allow components to adjust based on content */
+    padding: 20px;
+  }
+
+  /* Additional styles for smaller screens */
+  body {
+    font-size: 14px; /* Adjust font size for smaller devices */
+  }
+}
+
+.button {
+  background-color: #f4ce14; /* Set the background color */
+  color: black;              /* Set text color */
+  font-weight: bold;         /* Make text bold */
+  font-family: 'Markazi Text', serif; /* Use the Markazi Text font */
+  border: none;              /* Remove default border */
+  padding: 10px 20px;       /* Add some padding */
+  border-radius: 5px;       /* Rounded corners */
+  cursor: pointer;           /* Change cursor to pointer */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.button:hover {
+  background-color: #e5b610; /* Darken the background on hover */
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +160,4 @@
     transform: rotate(360deg);
   }
 }
+

@@ -12,7 +12,7 @@ const Confirmation = () => {
     <div>
       <h1>Confirmation</h1>
       {/* Show confirmation details here */}
-      <button onClick={handleDone}>Done</button>
+      <button className ="button" onClick={handleDone}>Done</button>
     </div>
   );
 };

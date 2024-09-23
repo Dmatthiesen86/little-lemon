@@ -12,10 +12,11 @@ const Hero = () => {
     <div className="hero">
       <h1>Welcome to Little Lemon!</h1>
       <p>Experience the best Mediterranean cuisine.</p>
-      <button onClick={handleReservations}>Make a Reservation</button>
+      <button className="button" onClick={handleReservations}>Make a Reservation</button>
     </div>
   );
 };
 
 export default Hero;
+
 

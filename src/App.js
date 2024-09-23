@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Nav from './Nav';
 import Hero from './Hero';
 import Highlights from './Highlights';
@@ -9,18 +9,21 @@ import Footer from './Footer';
 import Reservations from './Reservations';
 import Confirmation from './Confirmation';
 import ThankYou from './ThankYou';
+import './App.css'; // Make sure to import the CSS file
 
 function App() {
+  const location = useLocation(); // Get the current location
+
   return (
-    <Router>
+    <div className="container">
       <Nav />
+      {location.pathname === '/' && <div className="hero"><Hero /></div>} {/* Conditionally render Hero */}
       <Routes>
         <Route path="/" element={
           <>
-            <Hero />
-            <Highlights />
-            <Testimonials />
-            <About />
+            <div className="highlights"><Highlights /></div>
+            <div className="testimonials"><Testimonials /></div>
+            <div className="about"><About /></div>
           </>
         } />
         <Route path="/reservations" element={<Reservations />} />
@@ -28,8 +31,17 @@ function App() {
         <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
       <Footer />
+    </div>
+  );
+}
+
+// Wrap the App component in Router
+export default function WrappedApp() {
+  return (
+    <Router>
+      <App />
     </Router>
   );
 }
 
-export default App;
+

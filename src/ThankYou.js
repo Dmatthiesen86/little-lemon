@@ -12,7 +12,7 @@ const ThankYou = () => {
     <div>
       <h1>Thank You!</h1>
       {/* Thank you message here */}
-      <button onClick={handleBackHome}>Back to Home</button>
+      <button className="button" onClick={handleBackHome}>Back to Home</button>
     </div>
   );
 };
