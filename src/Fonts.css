@@ -1,13 +1,29 @@
-.title {
-    font-family: 'Markazi Text', serif; /* Use Markazi Text for titles */
-    font-weight: 500; /* Medium weight */
-    font-size: 50pt; /* Font size for titles */
-    margin: 0; /* Optional: reset margin */
+.colorTitle {
+    font-family: 'Markazi Text', serif;
+    font-weight: 500;
+    font-size: 50pt; 
+    margin: 0; 
+    color: #F4CE14;
+  }
+
+  .title {
+    font-family: 'Markazi Text', serif; 
+    font-weight: 500; 
+    font-size: 50pt; 
+    margin: 0; 
+    color: black;
   }
   
-  .regular-text {
+  .regular {
     font-family: 'Karla', sans-serif; /* Use Karla for regular text */
     font-weight: 400; /* Regular weight */
     font-size: 20pt; /* Font size for regular text */
     margin: 0; /* Optional: reset margin */
+  }
+
+  h2 {
+    font-size: 35pt; /* Specific font size for h2 */
+    margin-bottom: 35px; /* Add spacing between h2 and p */
+    color: white;
+    margin-top: 20px; /* Optional: Change text color for contrast */
   }

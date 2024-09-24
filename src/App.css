@@ -45,9 +45,51 @@ body {
 }
 
 .hero {
-  height: 458px;
-  width: 100%;
-  background-color: #042d23; /* Change as needed */
+  display: flex;
+  justify-content: space-between; /* Space between text and image */
+  align-items: center; /* Align items vertically centered */
+  padding: 20px; /* Add some padding */
+  background-color: #042d23;
+  position: relative; /* Set the background color */
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: row; /* Row layout */
+  width: 100%; /* Full width */
+}
+
+.hero-text-container {
+  max-width: 50%; /* Limit text container width */
+  color: white; /* Change text color for contrast */
+}
+
+.hero-image {
+  max-width: 45%; /* Limit image width */
+  height: 33%; /* Set height to one-third of the parent container */
+  border-radius: 15px; /* Add rounded edges */
+  object-fit: cover;
+  margin-top: -20px;
+  margin-bottom: -20px; /* Ensure the image covers the area without distortion */
+}
+
+.hero-button {
+  background-color: #f4ce14; 
+  color: black;             
+  font-weight: bold;         
+  font-family: 'Markazi Text', serif; 
+  border: none;              
+  padding: 20px 40px;       /* Increase padding for larger button size */
+  border-radius: 5px;       
+  cursor: pointer;           
+  transition: background-color 0.3s; 
+  margin-top: 75px;
+  margin-left: 140px;
+  font-size: 24pt; /* Set a larger font size */
+}
+
+ .hero-button:hover {
+  background-color: #d4b10c; /* Darker shade for hover */
 }
 
 .highlights {
@@ -155,7 +197,7 @@ footer h4 {
 }
 
 .button:hover {
-  background-color: #e5b610; /* Darken the background on hover */
+  background-color: #d4b10c; /* Darken the background on hover */
 }
 
 @keyframes App-logo-spin {
