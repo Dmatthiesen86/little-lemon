@@ -1,8 +1,8 @@
 import React from 'react';
-import './About.css'; 
-import logoImage from './Logo.png'; 
-import topImage from './top-image.jpg'; 
-import bottomImage from './bottom-image.jpg'; 
+import './About.css';
+import logoImage from './Logo.png';
+import topImage from './top-image.jpg';
+import bottomImage from './bottom-image.jpg';
 
 const About = () => {
     return (

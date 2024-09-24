@@ -1,6 +1,6 @@
 import React from 'react';
-import { HashLink as Link } from 'react-router-hash-link'; 
-import { Link as RouterLink } from 'react-router-dom'; 
+import { HashLink as Link } from 'react-router-hash-link';
+import { Link as RouterLink } from 'react-router-dom';
 import logo from './Logo.png';
 
 const Footer = () => {

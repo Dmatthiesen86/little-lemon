@@ -13,7 +13,7 @@ const ThankYou = () => {
   return (
     <div className="thank-you-container">
       <img src={waiterImage} alt="Thank You" style={{ width: '100%', height: 'auto', borderRadius: '15px' }} />
-      
+
       <div className="thank-you-message">
         <h1>Thank You!</h1>
         <h3>Your booking is confirmed.</h3>

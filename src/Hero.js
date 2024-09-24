@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Fonts.css';
-import restaurantFood from './restaurantfood.jpg'; 
+import restaurantFood from './restaurantfood.jpg';
 import './hero.css'
 
 const Hero = () => {

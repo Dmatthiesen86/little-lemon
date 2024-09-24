@@ -1,7 +1,7 @@
 .testimonials {
-    padding: 40px 20px; 
-    text-align: center; 
-    width: 100%; 
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
     margin: 0 auto;
     min-height: 541px;
     background-color: #042d23;
@@ -18,31 +18,31 @@
 .testimonial-boxes {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .testimonial-box {
-    flex: 1; 
-    margin: 10px; 
+    flex: 1;
+    margin: 10px;
     border: 1px solid #ccc;
-    border-radius: 10px; 
-    padding: 20px; 
-    background-color: #f9f9f9; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .stars {
-    font-size: 20pt; 
-    margin-bottom: 10px; 
+    font-size: 20pt;
+    margin-bottom: 10px;
 }
 
 .testimonial-content {
-    display: flex; 
+    display: flex;
 }
 
 .column {
-    flex: 1; 
-    padding: 10px; 
+    flex: 1;
+    padding: 10px;
 }
 
 .left-column {
@@ -50,22 +50,22 @@
 }
 
 .testimonial-image {
-    width: 100px; 
+    width: 100px;
     height: 100px;
-    border-radius: 50%; 
+    border-radius: 50%;
 }
 
 .testimonial-name {
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 .right-column {
-    text-align: left; 
+    text-align: left;
 }
 
 .testimonial-quote {
-    font-size: 16pt; 
-    color: #666; 
+    font-size: 16pt;
+    color: #666;
 }
 
 

@@ -1,48 +1,48 @@
     .hero {
     display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 20px; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
     background-color: #042d23;
     position: relative;
-    border-radius: 15px; 
+    border-radius: 15px;
   }
-  
+
   .hero-content {
     display: flex;
-    flex-direction: row; 
-    width: 100%; 
+    flex-direction: row;
+    width: 100%;
   }
-  
+
   .hero-text-container {
-    max-width: 50%; 
-    color: white; 
+    max-width: 50%;
+    color: white;
   }
-  
+
   .hero-image {
-    max-width: 45%; 
-    height: 33%; 
-    border-radius: 15px; 
+    max-width: 45%;
+    height: 33%;
+    border-radius: 15px;
     object-fit: cover;
     margin-top: -20px;
     margin-bottom: -20px;
   }
-  
+
   .hero-button {
-    background-color: #f4ce14; 
-    color: black;             
-    font-weight: bold;         
-    font-family: 'Markazi Text', serif; 
-    border: none;              
-    padding: 20px 40px;       
-    border-radius: 5px;       
-    cursor: pointer;           
-    transition: background-color 0.3s; 
+    background-color: #f4ce14;
+    color: black;
+    font-weight: bold;
+    font-family: 'Markazi Text', serif;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
     margin-top: 75px;
     margin-left: 140px;
-    font-size: 24pt; 
+    font-size: 24pt;
   }
-  
+
    .hero-button:hover {
-    background-color: #d4b10c; 
+    background-color: #d4b10c;
   }

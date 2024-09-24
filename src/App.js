@@ -9,10 +9,10 @@ import Footer from './Footer';
 import Reservations from './Reservations';
 import Confirmation from './Confirmation';
 import ThankYou from './ThankYou';
-import './App.css'; 
+import './App.css';
 
 function App() {
-    const location = useLocation(); 
+    const location = useLocation();
 
     return (
         <div className="container">

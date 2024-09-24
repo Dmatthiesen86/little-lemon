@@ -1,8 +1,8 @@
 import React from 'react';
-import './Highlights.css'; 
-import greekSalad from './greekSalad.jpg'; 
-import bruchetta from './bruchetta.svg'; 
-import lemonDessert from './lemonDessert.jpg'; 
+import './Highlights.css';
+import greekSalad from './greekSalad.jpg';
+import bruchetta from './bruchetta.svg';
+import lemonDessert from './lemonDessert.jpg';
 
 const Highlights = () => {
   return (

@@ -15,10 +15,10 @@ const Reservations = () => {
 
   const handleConfirm = (event) => {
     event.preventDefault();
-    
+
     const reservationDetails = {
       name: document.querySelector('input[type="text"]').value,
-      date: startDate.toLocaleDateString(), 
+      date: startDate.toLocaleDateString(),
       time: selectedTime,
       occasion: occasion,
       guests: document.querySelector('input[type="number"]').value,
@@ -28,7 +28,7 @@ const Reservations = () => {
   };
 
   const times = [
-    '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM', 
+    '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM',
     '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM',
     '8:00 PM', '8:30 PM', '9:00 PM'
   ];
@@ -38,9 +38,8 @@ const Reservations = () => {
   ];
 
   return (
-    <div>           
+    <div>
       <img src={reservationImage} alt="Reservations" style={{ width: '100%', height: 'auto', borderRadius: '15px' }} />
-      
       <section>
         <h1>Reservations</h1>
         <p>We are excited to welcome you!  Please fill out the booking form below to reserve your table.</p>
@@ -55,9 +54,9 @@ const Reservations = () => {
           </label>
           <label>
             Date:
-            <DatePicker 
-              selected={startDate} 
-              onChange={(date) => setStartDate(date)} 
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
               dateFormat="MMMM d, yyyy"
               required
             />
