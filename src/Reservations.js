@@ -15,7 +15,16 @@ const Reservations = () => {
 
   const handleConfirm = (event) => {
     event.preventDefault();
-    navigate('/confirmation');
+    
+    const reservationDetails = {
+      name: document.querySelector('input[type="text"]').value,
+      date: startDate.toLocaleDateString(), 
+      time: selectedTime,
+      occasion: occasion,
+      guests: document.querySelector('input[type="number"]').value,
+    };
+
+    navigate('/confirmation', { state: { reservationDetails } });
   };
 
   const times = [
