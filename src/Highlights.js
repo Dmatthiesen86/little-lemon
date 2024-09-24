@@ -1,8 +1,8 @@
 import React from 'react';
-import './Highlights.css'; // Import your CSS file for styling
-import greekSalad from './greekSalad.jpg'; // Use relative path
-import bruchetta from './bruchetta.svg'; // Use relative path
-import lemonDessert from './lemonDessert.jpg'; // Use relative path
+import './Highlights.css'; 
+import greekSalad from './greekSalad.jpg'; 
+import bruchetta from './bruchetta.svg'; 
+import lemonDessert from './lemonDessert.jpg'; 
 
 const Highlights = () => {
   return (

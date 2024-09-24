@@ -1,31 +1,31 @@
     .hero {
     display: flex;
-    justify-content: space-between; /* Space between text and image */
-    align-items: center; /* Align items vertically centered */
-    padding: 20px; /* Add some padding */
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px; 
     background-color: #042d23;
     position: relative;
-    border-radius: 15px; /* Set the background color */
+    border-radius: 15px; 
   }
   
   .hero-content {
     display: flex;
-    flex-direction: row; /* Row layout */
-    width: 100%; /* Full width */
+    flex-direction: row; 
+    width: 100%; 
   }
   
   .hero-text-container {
-    max-width: 50%; /* Limit text container width */
-    color: white; /* Change text color for contrast */
+    max-width: 50%; 
+    color: white; 
   }
   
   .hero-image {
-    max-width: 45%; /* Limit image width */
-    height: 33%; /* Set height to one-third of the parent container */
-    border-radius: 15px; /* Add rounded edges */
+    max-width: 45%; 
+    height: 33%; 
+    border-radius: 15px; 
     object-fit: cover;
     margin-top: -20px;
-    margin-bottom: -20px; /* Ensure the image covers the area without distortion */
+    margin-bottom: -20px;
   }
   
   .hero-button {
@@ -34,15 +34,15 @@
     font-weight: bold;         
     font-family: 'Markazi Text', serif; 
     border: none;              
-    padding: 20px 40px;       /* Increase padding for larger button size */
+    padding: 20px 40px;       
     border-radius: 5px;       
     cursor: pointer;           
     transition: background-color 0.3s; 
     margin-top: 75px;
     margin-left: 140px;
-    font-size: 24pt; /* Set a larger font size */
+    font-size: 24pt; 
   }
   
    .hero-button:hover {
-    background-color: #d4b10c; /* Darker shade for hover */
+    background-color: #d4b10c; 
   }

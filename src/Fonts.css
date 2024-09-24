@@ -15,15 +15,15 @@
   }
   
   .regular {
-    font-family: 'Karla', sans-serif; /* Use Karla for regular text */
-    font-weight: 400; /* Regular weight */
-    font-size: 20pt; /* Font size for regular text */
-    margin: 0; /* Optional: reset margin */
+    font-family: 'Karla', sans-serif; 
+    font-weight: 400; 
+    font-size: 20pt; 
+    margin: 0; 
   }
 
   h2 {
-    font-size: 35pt; /* Specific font size for h2 */
-    margin-bottom: 35px; /* Add spacing between h2 and p */
+    font-size: 35pt; 
+    margin-bottom: 35px; 
     color: white;
-    margin-top: 20px; /* Optional: Change text color for contrast */
+    margin-top: 20px; 
   }

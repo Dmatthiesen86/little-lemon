@@ -1,4 +1,3 @@
-/* Existing styles... */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -47,19 +46,6 @@ body {
   background-color: transparent;
 }
 
-.about {
-  height: 681px;
-  width: 100%;
-  background-color: #a0a0a0; /* Change as needed */
-}
-
-footer {
-  height: 349px;
-  width: 100%;
-  background-color: #888888; /* Change as needed */
-}
-
-/* New styles for horizontal navigation and footer */
 header {
   display: flex;
   align-items: center;
@@ -68,7 +54,7 @@ header {
 }
 
 .logo {
-  margin-right: 40px; /* Space between logo and nav */
+  margin-right: 40px; 
 }
 nav ul {
   display: flex;
@@ -78,28 +64,43 @@ nav ul {
 }
 
 nav ul li {
-  margin: 0 15px; /* Space between menu items */
+  margin: 0 15px; 
 }
 
 nav a {
   text-decoration: none;
-  color: #333; /* Change link color as needed */
-  font-family: 'Karla', sans-serif; /* Apply Karla font */
-  font-size: 16pt; /* Set font size */
-  font-weight: bold; /* Make the font bold */
+  color: #333; 
+  font-family: 'Karla', sans-serif; 
+  font-size: 16pt; 
+  font-weight: bold;
 }
 
 footer {
+  height: 249px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center; /* Center all items horizontally */
+  align-items: center; /* Center items vertically */
   padding: 20px;
-  background-color: #f1f1f1; /* Change as needed */
+  background-color: #ddd5d5; 
+}
+
+footer .logo-container {
+  flex: 0 0 30%; /* Logo container */
+  display: flex;
+  justify-content: center; /* Center the logo within the container */
+  align-items: center; /* Center logo vertically */
+}
+
+footer .footer-logo {
+  max-height: 100%; /* Fill 60% of footer height */
+  width: auto; /* Maintain aspect ratio */
 }
 
 footer div {
-  flex: 1; /* Allow equal space for each section */
-  margin: 0 10px;
+  flex: 1; 
+  margin: 0 10px; /* Increased margin for better spacing */
+  text-align: center; /* Center text inside each column */
 }
 
 footer ul {
@@ -108,39 +109,52 @@ footer ul {
 }
 
 footer ul li {
-  margin: 5px 0; /* Space between list items */
+  margin: 5px 0; 
 }
 
 footer h4 {
-  margin: 10px 0; /* Space above headings */
+  margin: 10px 0;
+  font-family: 'Markazi Text', serif; 
 }
 
 @media (max-width: 768px) {
+  header, footer {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center;
+  }
+
+  footer {
+    height: auto; /* Allow height to adjust */
+    padding: 20px;
+  }
+}
+
+
+@media (max-width: 768px) {
   .hero, .highlights, .testimonials, .about, footer {
-    height: auto; /* Allow components to adjust based on content */
+    height: auto; 
     padding: 20px;
   }
 
-  /* Additional styles for smaller screens */
   body {
-    font-size: 14px; /* Adjust font size for smaller devices */
+    font-size: 14px; 
   }
 }
 
 .button {
-  background-color: #f4ce14; /* Set the background color */
-  color: black;              /* Set text color */
-  font-weight: bold;         /* Make text bold */
-  font-family: 'Markazi Text', serif; /* Use the Markazi Text font */
-  border: none;              /* Remove default border */
-  padding: 10px 20px;       /* Add some padding */
-  border-radius: 5px;       /* Rounded corners */
-  cursor: pointer;           /* Change cursor to pointer */
-  transition: background-color 0.3s; /* Smooth background color transition */
+  background-color: #f4ce14; 
+  color: black;              
+  font-weight: bold;         
+  font-family: 'Markazi Text', serif; 
+  border: none;             
+  padding: 10px 20px;       
+  border-radius: 5px;       
+  cursor: pointer;          
+  transition: background-color 0.3s;
 }
 
 .button:hover {
-  background-color: #d4b10c; /* Darken the background on hover */
+  background-color: #d4b10c; 
 }
 
 @keyframes App-logo-spin {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Testimonials.css'; // Assuming you have a separate CSS file for styles
+import './Testimonials.css'; 
 import man from './man.jpg';
 import woman from './woman.jpeg';
 import man2 from './man2.jpg';

@@ -18,9 +18,9 @@ function App() {
         <div className="container">
             <Nav />
             {location.pathname === '/' && <div className="hero"><Hero /></div>}
-            <div id="highlights" className="highlights"><Highlights /></div>
-            <div id="testimonials" className="testimonials"><Testimonials /></div>
-            <div id="about" className="about"><About /></div>
+            {location.pathname === '/' && <div id="highlights" className="highlights"><Highlights /></div>}
+            {location.pathname === '/' && <div id="testimonials" className="testimonials"><Testimonials /></div>}
+            {location.pathname === '/' && <div id="about" className="about"><About /></div>}
             <Routes>
                 <Route path="/reservations" element={<Reservations />} />
                 <Route path="/confirmation" element={<Confirmation />} />
