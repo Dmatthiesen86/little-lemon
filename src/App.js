@@ -9,10 +9,10 @@ import Footer from './Footer';
 import Reservations from './Reservations';
 import Confirmation from './Confirmation';
 import ThankYou from './ThankYou';
-import './App.css'; // Make sure to import the CSS file
+import './App.css'; 
 
 function App() {
-  const location = useLocation(); // Get the current location
+  const location = useLocation(); 
 
   return (
     <div className="container">
@@ -35,7 +35,6 @@ function App() {
   );
 }
 
-// Wrap the App component in Router
 export default function WrappedApp() {
   return (
     <Router>
