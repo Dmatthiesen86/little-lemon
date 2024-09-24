@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Fonts.css';
 import restaurantFood from './restaurantfood.jpg'; // Adjust the path as needed
+import './hero.css'
 
 const Hero = () => {
   const navigate = useNavigate();
