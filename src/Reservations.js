@@ -2,18 +2,19 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Nav from './Nav';
 import Footer from './Footer';
-import reservationImage from './reservation.jpg'; // Correct path to the image
+import reservationImage from './reservation.jpg';
 import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css'; // Import the styles for the date picker
+import 'react-datepicker/dist/react-datepicker.css';
+import './Reservations.css';
 
 const Reservations = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState('');
-  const [occasion, setOccasion] = useState(''); // State for occasion
+  const [occasion, setOccasion] = useState('');
   const navigate = useNavigate();
 
   const handleConfirm = (event) => {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
     navigate('/confirmation');
   };
 
@@ -29,21 +30,20 @@ const Reservations = () => {
 
   return (
     <div>           
-      <img src={reservationImage} alt="Reservations" style={{ width: '100%', height: 'auto' }} />
+      <img src={reservationImage} alt="Reservations" style={{ width: '100%', height: 'auto', borderRadius: '15px' }} />
       
       <section>
         <h1>Reservations</h1>
-        <p>We are excited to welcome you! Please fill out the booking form below to reserve your table.</p>
+        <p>We are excited to welcome you!  Please fill out the booking form below to reserve your table.</p>
       </section>
 
-      <section>
-        <h2>Booking Form</h2>
+      <section className="reservations-container">
+        <h3>Booking Form</h3>
         <form onSubmit={handleConfirm}>
           <label>
             Name:
             <input type="text" required />
           </label>
-          <br />
           <label>
             Date:
             <DatePicker 
@@ -53,7 +53,6 @@ const Reservations = () => {
               required
             />
           </label>
-          <br />
           <label>
             Time:
             <select value={selectedTime} onChange={(e) => setSelectedTime(e.target.value)} required>
@@ -63,7 +62,6 @@ const Reservations = () => {
               ))}
             </select>
           </label>
-          <br />
           <label>
             Occasion:
             <select value={occasion} onChange={(e) => setOccasion(e.target.value)} required>
@@ -73,17 +71,16 @@ const Reservations = () => {
               ))}
             </select>
           </label>
-          <br />
           <label>
             Number of Guests:
             <input type="number" required min="1" />
           </label>
-          <br />
-          <button type="submit" className="button">Confirm</button>
+          <button type="submit" className="button">Submit</button>
         </form>
       </section>
-    </div>
+   </div>
   );
 };
 
 export default Reservations;
+

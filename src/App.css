@@ -76,31 +76,31 @@ nav a {
 }
 
 footer {
-  height: 249px;
+  height: 200px;
   width: 100%;
   display: flex;
-  justify-content: center; /* Center all items horizontally */
-  align-items: center; /* Center items vertically */
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   background-color: #ddd5d5; 
 }
 
 footer .logo-container {
-  flex: 0 0 30%; /* Logo container */
+  flex: 0 0 30%;
   display: flex;
-  justify-content: center; /* Center the logo within the container */
-  align-items: center; /* Center logo vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 footer .footer-logo {
-  max-height: 100%; /* Fill 60% of footer height */
-  width: auto; /* Maintain aspect ratio */
+  max-height: 100%;
+  width: auto;
 }
 
 footer div {
   flex: 1; 
-  margin: 0 10px; /* Increased margin for better spacing */
-  text-align: center; /* Center text inside each column */
+  margin: 0 10px;
+  text-align: center;
 }
 
 footer ul {
@@ -119,12 +119,12 @@ footer h4 {
 
 @media (max-width: 768px) {
   header, footer {
-    flex-direction: column; /* Stack items vertically on small screens */
+    flex-direction: column;
     align-items: center;
   }
 
   footer {
-    height: auto; /* Allow height to adjust */
+    height: auto; 
     padding: 20px;
   }
 }
@@ -139,22 +139,6 @@ footer h4 {
   body {
     font-size: 14px; 
   }
-}
-
-.button {
-  background-color: #f4ce14; 
-  color: black;              
-  font-weight: bold;         
-  font-family: 'Markazi Text', serif; 
-  border: none;             
-  padding: 10px 20px;       
-  border-radius: 5px;       
-  cursor: pointer;          
-  transition: background-color 0.3s;
-}
-
-.button:hover {
-  background-color: #d4b10c; 
 }
 
 @keyframes App-logo-spin {
