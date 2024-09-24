@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Nav = () => {
     return (
         <header>
-            <img src={logo} alt="Little Lemon Logo" />
+             <img src={logo} alt="Little Lemon Logo" className="logo" />
             <nav>
                 <ul>
                     <li><Link to="/">Home</Link></li>

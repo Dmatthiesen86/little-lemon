@@ -1,0 +1,13 @@
+.title {
+    font-family: 'Markazi Text', serif; /* Use Markazi Text for titles */
+    font-weight: 500; /* Medium weight */
+    font-size: 50pt; /* Font size for titles */
+    margin: 0; /* Optional: reset margin */
+  }
+  
+  .regular-text {
+    font-family: 'Karla', sans-serif; /* Use Karla for regular text */
+    font-weight: 400; /* Regular weight */
+    font-size: 20pt; /* Font size for regular text */
+    margin: 0; /* Optional: reset margin */
+  }
