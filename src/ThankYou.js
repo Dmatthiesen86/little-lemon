@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import waiterImage from './waiter.jpg'; // Ensure the correct path to the image
-import './ThankYou.css'; // Import your CSS styles if needed
+import waiterImage from './waiter.jpg';
+import './ThankYou.css';
 
 const ThankYou = () => {
   const navigate = useNavigate();

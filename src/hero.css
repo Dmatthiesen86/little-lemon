@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     background-color: #042d23;
     position: relative;
     border-radius: 15px;
@@ -21,12 +21,11 @@
 
   .hero-image {
     max-width: 45%;
-    height: 33%;
+    max-height: 700px;
     border-radius: 15px;
     object-fit: cover;
-    margin-top: -20px;
-    margin-bottom: -20px;
-  }
+    margin-left: 40px;
+}
 
   .hero-button {
     background-color: #f4ce14;
@@ -38,10 +37,9 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
-    margin-top: 75px;
-    margin-left: 140px;
     font-size: 24pt;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
   }
 
    .hero-button:hover {

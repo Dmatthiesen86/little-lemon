@@ -6,7 +6,7 @@ import Highlights from './Highlights';
 import Testimonials from './Testimonials';
 import About from './About';
 import Footer from './Footer';
-import Reservations from './Reservations';
+import Booking from './Booking';
 import Confirmation from './Confirmation';
 import ThankYou from './ThankYou';
 import './App.css';
@@ -22,7 +22,7 @@ function App() {
             {location.pathname === '/' && <div id="testimonials" className="testimonials"><Testimonials /></div>}
             {location.pathname === '/' && <div id="about" className="about"><About /></div>}
             <Routes>
-                <Route path="/reservations" element={<Reservations />} />
+                <Route path="/Booking" element={<Booking />} />
                 <Route path="/confirmation" element={<Confirmation />} />
                 <Route path="/thank-you" element={<ThankYou />} />
             </Routes>
@@ -38,6 +38,3 @@ export default function WrappedApp() {
         </Router>
     );
 }
-
-
-

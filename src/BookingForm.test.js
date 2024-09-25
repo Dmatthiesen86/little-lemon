@@ -3,6 +3,7 @@ import { MemoryRouter } from "react-router-dom";
 import Booking from './Booking';
 import '@testing-library/jest-dom';
 
+
 test('renders Booking Form heading', () => {
     render(
         <MemoryRouter initialEntries={['/Booking']}>

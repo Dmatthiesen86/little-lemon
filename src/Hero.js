@@ -7,8 +7,8 @@ import './hero.css'
 const Hero = () => {
   const navigate = useNavigate();
 
-  const handleReservations = () => {
-    navigate('/reservations');
+  const handleBooking = () => {
+    navigate('/Booking');
   };
 
   return (
@@ -18,9 +18,9 @@ const Hero = () => {
           <h1 className="colorTitle">Little Lemon</h1>
           <h2>Chicago</h2>
           <p className="regular">
-            Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual environment. The restaurant features a locally-sourced menu with daily specials.
+          Little Lemon is a charming neighborhood bistro that offers simple yet delicious food and classic cocktails in a warm, casual setting. The menu emphasizes locally sourced ingredients, featuring daily specials that highlight seasonal produce. With its inviting atmosphere, Little Lemon is perfect for intimate dinners or lively gatherings, making every visit a delightful experience filled with comfort and flavor.
           </p>
-          <button className="hero-button" onClick={handleReservations}>Make a Reservation</button>
+          <button className="hero-button" onClick={handleBooking}>Make a Reservation</button>
         </div>
         <img src={restaurantFood} alt="Delicious food from Little Lemon" className="hero-image" />
       </div>

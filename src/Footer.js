@@ -15,7 +15,7 @@ const Footer = () => {
           <li><RouterLink to="/">Home</RouterLink></li>
           <li><Link to="#about">About</Link></li>
           <li><Link to="#highlights">Menu</Link></li>
-          <li><RouterLink to="/reservations">Reservations</RouterLink></li>
+          <li><RouterLink to="/Booking">Reservations</RouterLink></li>
           <li><RouterLink to="/order-online">Order Online</RouterLink></li>
           <li><RouterLink to="/login">Login</RouterLink></li>
         </ul>

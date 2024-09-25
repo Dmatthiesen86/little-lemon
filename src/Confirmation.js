@@ -8,7 +8,7 @@ const Confirmation = () => {
   const { reservationDetails } = location.state || {};
 
   const handleBack = () => {
-    navigate('/reservations');
+    navigate('/Booking');
   };
 
   const handleConfirm = (event) => {
