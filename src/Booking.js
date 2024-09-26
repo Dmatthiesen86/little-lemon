@@ -8,15 +8,12 @@ import 'react-datepicker/dist/react-datepicker.css';
 import './Booking.css';
 import BookingForm from './BookingForm';
 
-const Booking = () => {
+const Booking = ({ submitForm }) => {
   return (
-    <div>
-      <BookingForm />
-    </div>
+      <div>
+          <BookingForm submitForm={submitForm} />
+      </div>
   );
 };
 
 export default Booking;
-
-
-

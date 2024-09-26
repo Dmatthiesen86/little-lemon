@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Confirmation.css';
 
-const Confirmation = () => {
+const ConfirmedBooking = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { reservationDetails } = location.state || {};
@@ -18,7 +18,7 @@ const Confirmation = () => {
 
   return (
     <div className="confirmation-container">
-      <h1>Please Confirm Your Order</h1>
+      <h1>Confirm your Booking!</h1>
       {reservationDetails && (
         <table>
           <tbody>
@@ -71,4 +71,4 @@ const Confirmation = () => {
   );
 };
 
-export default Confirmation;
+export default ConfirmedBooking;

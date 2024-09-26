@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { Link as RouterLink } from 'react-router-dom';
 import logo from './Logo.png';
 
 const Nav = () => {
+    const [isNavVisible, setIsNavVisible] = useState(false);
+
+    const toggleNav = () => {
+        setIsNavVisible(!isNavVisible);
+    };
+
     return (
         <header>
             <img src={logo} alt="Little Lemon Logo" className="logo" />
-            <nav>
+            <nav className={isNavVisible ? 'active' : ''}>
+                <button onClick={toggleNav}>
+                    {isNavVisible ? 'Close' : 'Menu'}
+                </button>
                 <ul>
                     <li><RouterLink to="/">Home</RouterLink></li>
                     <li><Link to="#about">About</Link></li>
@@ -22,6 +31,7 @@ const Nav = () => {
 };
 
 export default Nav;
+
 
 
 

@@ -28,7 +28,8 @@
 
 .about-subtitle {
     font-size: 24pt;
-    margin-bottom: 25px;
+    margin-top: 20px;
+    margin-bottom: 30px;
     text-align: center;
     font-family: 'Markazi Text', serif;
 }
@@ -69,8 +70,3 @@
     z-index: 1;
     border-radius: 15px;
 }
-
-
-
-
-
