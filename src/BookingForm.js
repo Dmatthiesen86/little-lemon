@@ -77,17 +77,18 @@ const BookingForm = ({ submitForm }) => {
     }, [startDate]);
 
     return (
-        <div>
+        <main>
             <img src={reservationImage} alt="Reservations" style={{ width: '100%', height: 'auto', borderRadius: '15px' }} />
             <section>
                 <h1>Reservations</h1>
                 <p>We are excited to welcome you! Please fill out the booking form below to reserve your table.</p>
             </section>
             <form onSubmit={handleConfirm}>
-                <label>
-                    Name:
+                <div>
+                    <label htmlFor="name">Name:</label>
                     <input
                         type="text"
+                        id="name"
                         value={name}
                         onChange={(e) => {
                             setName(e.target.value);
@@ -96,9 +97,9 @@ const BookingForm = ({ submitForm }) => {
                         required
                     />
                     {errors.name && <span className="error">{errors.name}</span>}
-                </label>
-                <label>
-                    Date:
+                </div>
+                <div>
+                    <label htmlFor="date">Date:</label>
                     <DatePicker
                         selected={startDate}
                         onChange={(date) => {
@@ -106,13 +107,15 @@ const BookingForm = ({ submitForm }) => {
                             validateForm();
                         }}
                         dateFormat="MMMM d, yyyy"
+                        id="date"
                         required
                     />
                     {errors.date && <span className="error">{errors.date}</span>}
-                </label>
-                <label>
-                    Time:
+                </div>
+                <div>
+                    <label htmlFor="time">Time:</label>
                     <select
+                        id="time"
                         value={selectedTime}
                         onChange={(e) => {
                             setSelectedTime(e.target.value);
@@ -130,10 +133,11 @@ const BookingForm = ({ submitForm }) => {
                         )}
                     </select>
                     {errors.time && <span className="error">{errors.time}</span>}
-                </label>
-                <label>
-                    Occasion:
+                </div>
+                <div>
+                    <label htmlFor="occasion">Occasion:</label>
                     <select
+                        id="occasion"
                         value={occasion}
                         onChange={(e) => {
                             setOccasion(e.target.value);
@@ -147,11 +151,12 @@ const BookingForm = ({ submitForm }) => {
                         ))}
                     </select>
                     {errors.occasion && <span className="error">{errors.occasion}</span>}
-                </label>
-                <label>
-                    Number of Guests:
+                </div>
+                <div>
+                    <label htmlFor="guests">Number of Guests:</label>
                     <input
                         type="number"
+                        id="guests"
                         min="1"
                         value={guests}
                         onChange={(e) => {
@@ -161,10 +166,10 @@ const BookingForm = ({ submitForm }) => {
                         required
                     />
                     {errors.guests && <span className="error">{errors.guests}</span>}
-                </label>
-                <button type="submit" className="button" disabled={!formValid}>Submit</button>
+                </div>
+                <button type="submit" className="button" aria-label="Submit Form" disabled={!formValid}>Submit</button>
             </form>
-        </div>
+        </main>
     );
 };
 

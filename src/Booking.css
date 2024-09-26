@@ -1,7 +1,7 @@
 .reservations-container {
     max-width: 600px;
-    margin: 0 auto;
-    padding: 40px;
+    margin: 20px auto;
+    padding: 20px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -10,7 +10,7 @@
 form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 label {
@@ -28,7 +28,6 @@ select {
     font-size: 16pt;
     margin-top: 5px;
     margin-bottom: 20px;
-    margin-left: 35px;
 }
 
 .button {
@@ -54,4 +53,25 @@ select {
     color: red;
     font-size: 12px;
     margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .reservations-container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    form {
+        gap: 10px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+        font-size: 14pt;
+    }
+
+    .button {
+        font-size: 18px;
+    }
 }

@@ -13,10 +13,10 @@ const Nav = () => {
     return (
         <header>
             <img src={logo} alt="Little Lemon Logo" className="logo" />
+            <button onClick={toggleNav} className="nav-toggle" aria-expanded={isNavVisible}>
+                {isNavVisible ? 'Close' : 'Menu'}
+            </button>
             <nav className={isNavVisible ? 'active' : ''}>
-                <button onClick={toggleNav}>
-                    {isNavVisible ? 'Close' : 'Menu'}
-                </button>
                 <ul>
                     <li><RouterLink to="/">Home</RouterLink></li>
                     <li><Link to="#about">About</Link></li>
@@ -31,9 +31,3 @@ const Nav = () => {
 };
 
 export default Nav;
-
-
-
-
-
-

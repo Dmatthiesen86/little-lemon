@@ -17,10 +17,10 @@ const ConfirmedBooking = () => {
   };
 
   return (
-    <div className="confirmation-container">
+    <div className="confirmation-container" role="main">
       <h1>Confirm your Booking!</h1>
       {reservationDetails && (
-        <table>
+        <table aria-label="Reservation Details">
           <tbody>
             <tr>
               <td><strong>Name:</strong></td>
@@ -47,20 +47,21 @@ const ConfirmedBooking = () => {
       )}
       <p className="something-not-right">Something not right?</p>
       <button className="button" onClick={handleBack}>Back to Reservations</button>
-      <p>Please complete the contact form to complete your reservation.</p>
+      <p>Please complete the contact form to finalize your reservation.</p>
 
-      <form className="contact-form" onSubmit={handleConfirm}>
-        <label>
+      <form className="contact-form" onSubmit={handleConfirm} aria-labelledby="contact-form">
+        <h3 id="contact-form">Contact Information</h3>
+        <label htmlFor="contact-name">
           Name:
-          <input type="text" required />
+          <input type="text" id="contact-name" required />
         </label>
-        <label>
+        <label htmlFor="contact-phone">
           Phone #:
-          <input type="text" required />
+          <input type="tel" id="contact-phone" required />
         </label>
-        <label>
+        <label htmlFor="contact-email">
           Email Address:
-          <input type="email" required />
+          <input type="email" id="contact-email" required />
         </label>
         <p>Additional Instructions:</p>
         <textarea rows="4" placeholder="Enter any additional instructions here..."></textarea>

@@ -11,19 +11,24 @@ const ThankYou = () => {
   };
 
   return (
-    <div className="thank-you-container">
-      <img src={waiterImage} alt="Thank You" style={{ width: '100%', height: 'auto', borderRadius: '15px' }} />
+    <div className="thank-you-container" role="main">
+      <img
+        src={waiterImage}
+        alt="Thank You"
+        style={{ width: '100%', height: 'auto', borderRadius: '15px' }}
+        aria-hidden="true"
+      />
 
       <div className="thank-you-message">
         <h1>Thank You!</h1>
         <h3>Your booking is confirmed.</h3>
       </div>
 
-      <button className="button">Add to Calendar</button>
+      <button className="button" aria-label="Add your booking to calendar">Add to Calendar</button>
 
-      <p>Feel free to contact us at 123-456-7890 if you have any questions about your reservations.</p>
+      <p>Feel free to contact us at <strong>123-456-7890</strong> if you have any questions about your reservations.</p>
 
-      <button className="button" onClick={handleBackHome}>Done</button>
+      <button className="button" onClick={handleBackHome} aria-label="Return to home page">Done</button>
     </div>
   );
 };

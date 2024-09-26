@@ -34,15 +34,22 @@ const testimonialsData = [
 
 const Testimonials = () => {
   return (
-    <section className="testimonials">
-      <h1 className="testimonial-title">Testimonials</h1>
+    <section className="testimonials" role="region" aria-labelledby="testimonials-title">
+      <h1 id="testimonials-title" className="testimonial-title">Testimonials</h1>
       <div className="testimonial-boxes">
         {testimonialsData.map((testimonial, index) => (
-          <div className="testimonial-box" key={index}>
-            <div className="stars">{'⭐'.repeat(testimonial.stars)}</div>
+          <div className="testimonial-box" key={index} role="article" aria-label={`Testimonial from ${testimonial.name}`}>
+            <div className="stars" aria-label={`Rating: ${testimonial.stars} stars`}>
+              {'⭐'.repeat(testimonial.stars)}
+            </div>
             <div className="testimonial-content">
               <div className="column left-column">
-                <img src={testimonial.image} alt={testimonial.name} className="testimonial-image" />
+                <img 
+                  src={testimonial.image} 
+                  alt={`Picture of ${testimonial.name}`} 
+                  className="testimonial-image" 
+                  loading="lazy" 
+                />
                 <h3 className="testimonial-name">{testimonial.name}</h3>
               </div>
               <div className="column right-column">

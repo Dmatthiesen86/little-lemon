@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Nav from './Nav';
 import Hero from './Hero';
@@ -20,27 +20,63 @@ export const BookingContext = createContext();
 
 function App() {
     const [bookingData, setBookingData] = useState([]);
+    const [showScrollToTop, setShowScrollToTop] = useState(false);
     const location = useLocation();
 
     const submitForm = (formData) => {
         return submitAPI(formData);
     };
 
+    const handleScroll = () => {
+        console.log('Scroll position:', window.scrollY);
+        if (window.scrollY > 300) {
+            setShowScrollToTop(true);
+        } else {
+            setShowScrollToTop(false);
+        }
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <BookingContext.Provider value={{ bookingData, setBookingData }}>
             <div className="container">
-                <Nav />
-                {location.pathname === '/' && <div className="hero"><Hero /></div>}
-                {location.pathname === '/' && <div id="highlights" className="highlights"><Highlights /></div>}
-                {location.pathname === '/' && <div id="testimonials" className="testimonials"><Testimonials /></div>}
-                {location.pathname === '/' && <div id="about" className="about"><About /></div>}
-                <Routes>
-                    <Route path="/Booking" element={<Booking submitForm={submitForm} />} />
-                    <Route path="/ConfirmedBooking" element={<ConfirmedBooking />} />
-                    <Route path="/thank-you" element={<ThankYou />} />
-                </Routes>
-                <Footer />
+                <header>
+                    <Nav />
+                </header>
+                <main aria-label="Main content">
+                    {location.pathname === '/' && <div className="hero"><Hero /></div>}
+                    {location.pathname === '/' && <div id="highlights" className="highlights"><Highlights /></div>}
+                    {location.pathname === '/' && <div id="testimonials" className="testimonials"><Testimonials /></div>}
+                    {location.pathname === '/' && <div id="about" className="about"><About /></div>}
+                    <Routes>
+                        <Route path="/Booking" element={<Booking submitForm={submitForm} />} />
+                        <Route path="/ConfirmedBooking" element={<ConfirmedBooking />} />
+                        <Route path="/thank-you" element={<ThankYou />} />
+                    </Routes>
+                </main>
+                <footer>
+                    <Footer />
+                </footer>
             </div>
+            {showScrollToTop && (
+                <button 
+                    className={`scroll-to-top ${showScrollToTop ? 'show' : ''}`} 
+                    onClick={scrollToTop} 
+                    aria-label="Scroll to top"
+                >
+                    ↑
+                </button>
+            )}
         </BookingContext.Provider>
     );
 }
