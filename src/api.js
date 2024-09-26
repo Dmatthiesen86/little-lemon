@@ -19,6 +19,18 @@ export const fetchAPI = function (date) {
             result.push(`${i - 12}:30 PM`);
         }
     }
+
+    if (result.length === 0) {
+        return [
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM"
+        ];
+    }
+
     return result;
 };
 

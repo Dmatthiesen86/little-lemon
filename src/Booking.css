@@ -49,3 +49,9 @@ select {
     background-color: #d4b10c;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}

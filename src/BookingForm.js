@@ -1,6 +1,6 @@
 /* global fetchAPI */
 
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -14,35 +14,61 @@ const BookingForm = ({ submitForm }) => {
     const [selectedTime, setSelectedTime] = useState('');
     const [occasion, setOccasion] = useState('');
     const [availableTimes, setAvailableTimes] = useState([]);
+    const [name, setName] = useState('');
+    const [guests, setGuests] = useState(1);
+    const [formValid, setFormValid] = useState(false);
+    const [errors, setErrors] = useState({
+        name: '',
+        date: '',
+        time: '',
+        occasion: '',
+        guests: '',
+    });
     const navigate = useNavigate();
-
-    const handleConfirm = (event) => {
-        event.preventDefault();
-
-        const reservationDetails = {
-            name: document.querySelector('input[type="text"]').value,
-            date: startDate.toLocaleDateString(),
-            time: selectedTime,
-            occasion: occasion,
-            guests: document.querySelector('input[type="number"]').value,
-        };
-
-        setBookingData(prevData => [...prevData, reservationDetails]);
-
-        if (submitForm(reservationDetails)) {
-            navigate('/ConfirmedBooking', { state: { reservationDetails } });
-        }
-    };
-
     const occasions = ['Birthday', 'Anniversary', 'Reunion', 'Other'];
+
+    const validateForm = () => {
+        const newErrors = {};
+        if (name.trim() === '') newErrors.name = "Please enter your name.";
+        if (selectedTime === '') newErrors.time = "Please select a time.";
+        if (occasion === '') newErrors.occasion = "Please select an occasion.";
+        if (guests < 1) newErrors.guests = "Please enter a valid number of guests (at least 1).";
+
+        setErrors(newErrors);
+        setFormValid(Object.keys(newErrors).length === 0);
+    };
 
     const fetchAvailableTimes = async (date) => {
         try {
             const times = await fetchAPI(date);
-            console.log("Fetched times:", times);
-            setAvailableTimes(times.length > 0 ? times : []);
+            setAvailableTimes(times || []);
+            setSelectedTime('');
         } catch (error) {
-            console.error("Error fetching available times:", error);
+            console.error("Failed to fetch available times:", error);
+            setAvailableTimes([]);
+        }
+    };
+
+    const handleConfirm = (event) => {
+        event.preventDefault();
+        validateForm();
+
+        if (!formValid) {
+            return;
+        }
+
+        const reservationDetails = {
+            name,
+            date: startDate.toLocaleDateString(),
+            time: selectedTime,
+            occasion,
+            guests,
+        };
+
+        setBookingData((prevData) => [...prevData, reservationDetails]);
+
+        if (submitForm(reservationDetails)) {
+            navigate('/ConfirmedBooking', { state: { reservationDetails } });
         }
     };
 
@@ -57,51 +83,87 @@ const BookingForm = ({ submitForm }) => {
                 <h1>Reservations</h1>
                 <p>We are excited to welcome you! Please fill out the booking form below to reserve your table.</p>
             </section>
-
-            <section className="reservations-container">
-                <h3>Booking Form</h3>
-                <form onSubmit={handleConfirm}>
-                    <label>
-                        Name:
-                        <input type="text" required />
-                    </label>
-                    <label>
-                        Date:
-                        <DatePicker
-                            selected={startDate}
-                            onChange={(date) => {
-                                setStartDate(date);
-                                fetchAvailableTimes(date);
-                            }}
-                            dateFormat="MMMM d, yyyy"
-                            required
-                        />
-                    </label>
-                    <label>
-                        Time:
-                        <select value={selectedTime} onChange={(e) => setSelectedTime(e.target.value)} required>
-                            <option value="" disabled>Select Time</option>
-                            {availableTimes.map((time) => (
+            <form onSubmit={handleConfirm}>
+                <label>
+                    Name:
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => {
+                            setName(e.target.value);
+                            validateForm();
+                        }}
+                        required
+                    />
+                    {errors.name && <span className="error">{errors.name}</span>}
+                </label>
+                <label>
+                    Date:
+                    <DatePicker
+                        selected={startDate}
+                        onChange={(date) => {
+                            setStartDate(date);
+                            validateForm();
+                        }}
+                        dateFormat="MMMM d, yyyy"
+                        required
+                    />
+                    {errors.date && <span className="error">{errors.date}</span>}
+                </label>
+                <label>
+                    Time:
+                    <select
+                        value={selectedTime}
+                        onChange={(e) => {
+                            setSelectedTime(e.target.value);
+                            validateForm();
+                        }}
+                        required
+                    >
+                        <option value="" disabled>Select Time</option>
+                        {availableTimes.length > 0 ? (
+                            availableTimes.map((time) => (
                                 <option key={time} value={time}>{time}</option>
-                            ))}
-                        </select>
-                    </label>
-                    <label>
-                        Occasion:
-                        <select value={occasion} onChange={(e) => setOccasion(e.target.value)} required>
-                            <option value="" disabled>Select Occasion</option>
-                            {occasions.map((occasionOption) => (
-                                <option key={occasionOption} value={occasionOption}>{occasionOption}</option>
-                            ))}
-                        </select>
-                    </label>
-                    <label>
-                        Number of Guests:
-                        <input type="number" required min="1" />
-                    </label>
-                    <button type="submit" className="button">Submit</button>
-                </form>
-            </section>
+                            ))
+                        ) : (
+                            <option value="" disabled>No available times</option>
+                        )}
+                    </select>
+                    {errors.time && <span className="error">{errors.time}</span>}
+                </label>
+                <label>
+                    Occasion:
+                    <select
+                        value={occasion}
+                        onChange={(e) => {
+                            setOccasion(e.target.value);
+                            validateForm();
+                        }}
+                        required
+                    >
+                        <option value="" disabled>Select Occasion</option>
+                        {occasions.map((occasionOption) => (
+                            <option key={occasionOption} value={occasionOption}>{occasionOption}</option>
+                        ))}
+                    </select>
+                    {errors.occasion && <span className="error">{errors.occasion}</span>}
+                </label>
+                <label>
+                    Number of Guests:
+                    <input
+                        type="number"
+                        min="1"
+                        value={guests}
+                        onChange={(e) => {
+                            setGuests(Number(e.target.value));
+                            validateForm();
+                        }}
+                        required
+                    />
+                    {errors.guests && <span className="error">{errors.guests}</span>}
+                </label>
+                <button type="submit" className="button" disabled={!formValid}>Submit</button>
+            </form>
         </div>
     );
 };
